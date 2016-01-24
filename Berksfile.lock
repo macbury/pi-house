@@ -1,0 +1,7 @@
+DEPENDENCIES
+  pi-house
+    path: .
+    metadata: true
+
+GRAPH
+  pi-house (0.0.0)
