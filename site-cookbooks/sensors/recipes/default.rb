@@ -1,3 +1,6 @@
+package 'build-essential'
+package 'python-dev'
+
 git '/tmp/codesend' do
   repository 'https://github.com/ninjablocks/433Utils'
   action :checkout
@@ -10,12 +13,17 @@ execute 'compile and install codesend' do
 end
 
 git '/tmp/dht11' do
-  repository 'https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code/'
+  repository 'https://github.com/adafruit/Adafruit_Python_DHT.git'
   action :checkout
   not_if { ::File.exists?('/usr/local/bin/dht') }
 end
 
 execute 'install dht11 driver' do
-  command 'cp /tmp/dht11/Adafruit_DHT_Driver/Adafruit_DHT /usr/local/bin/dht && chmod +x /usr/local/bin/dht'
+  command 'cd /tmp/dht11 && python setup.py install'
+  not_if { ::File.exists?('/usr/local/bin/dht') }
+end
+
+execute 'install dht11 driver' do
+  command 'cp /tmp/dht11/examples/AdafruitDHT.py /usr/local/bin/dht && chmod +x /usr/local/bin/dht'
   creates '/usr/local/bin/dht'
 end
