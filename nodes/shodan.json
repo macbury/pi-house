@@ -1,0 +1,11 @@
+{
+  "run_list": [
+    "recipe[wiringpi::default]",
+    "recipe[dev::default]",
+    "recipe[sensors::default]",
+    "recipe[app::default]"
+  ],
+  "automatic": {
+    "ipaddress": "192.168.1.55"
+  }
+}

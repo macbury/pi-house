@@ -1,0 +1,5 @@
+Install all required stuff for controlling DHT11 sensor and A-type switches like:
+http://www.pollin.de/shop/dt/MzMzOTQ0OTk-/Haustechnik/Funkschaltsysteme/Funksteckdosen_Set_mit_3_Steckdosen.html
+
+
+433 Mhz RC sender is connected to psychical pin 11 and DHT11 sensor is connected to physical pin 16
